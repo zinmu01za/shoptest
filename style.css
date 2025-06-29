@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.navbarbox{
+    background-color: #f8f9fa;
+    height: 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    gap: 1rem;
+   
+}
+
+.navbar li{
+    list-style: none;
+    
+}
+
+
+
+.navbar a{
+    display: block;               /* ครอบเต็มพื้นที่ li */
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    padding: 1rem 1rem;         /* ปรับให้ hover เห็นชัด */
+    border-radius: 5px;
+    
+}
+
+.navbar a:hover{
+    color: #0056b3;
+    background-color: #e9ecef;
+}
+
+
