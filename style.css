@@ -7,34 +7,36 @@
 
 .navbarbox{
     background-color: #f8f9fa;
-    height: 50px;
     box-shadow: 0 4px 4px rgba(0,0,0,0.1);
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* จัดให้โลโก้และเมนูอยู่ห่างกัน */
+    text-wrap: nowrap; /* ป้องกันการตัดคำ */
 }
 
 .navbar{
     display: flex;
-    gap: 1rem;
-   
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
 }
 
 .navbar li{
     list-style: none;
-    
 }
 
-
-
 .navbar a{
-    display: block;               /* ครอบเต็มพื้นที่ li */
+    display: block;
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
-    padding: 1rem 1rem;         /* ปรับให้ hover เห็นชัด */
+    padding: 1.5rem;
     border-radius: 5px;
-    
+
+    text-align: center;
 }
 
 .navbar a:hover{
@@ -45,7 +47,7 @@
 
 .main-content{
    display: flex;
-   align-items: flex-start;
+
 }
 
 
@@ -65,16 +67,107 @@
     
 }
 
+.logo{
+    width: 50px; /* ปรับขนาดโลโก้ */
+    height: 50px; /* ปรับขนาดโลโก้ */
+    padding-left: 1rem; /* เพิ่ม padding รอบๆ โลโก้ */
+}
 
-@media (max-width: 768px) {
+.logobox{
+    display: flex;
+    align-items: center; /* จัดแนวโลโก้และข้อความให้อยู่กลาง */
+    gap: 1rem; /* เพิ่มระยะห่างระหว่างโลโก้และข้อความ */
+}
+
+.logo-text {
+    font-size: 1.5rem; /* ปรับขนาดข้อความ */
+    font-weight: bold; /* ทำให้ข้อความหนา */
+    text-transform: capitalize;
+    background-image: url('img/fontbg.webp'); /* ใช้ภาพพื้นหลัง */
+    background-size: cover; /* ปรับขนาดภาพให้เต็มพื้นที่ */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* ปรับสีข้อความ */
+    text-wrap: nowrap;
+}
+
+.hamburger {
+    display: none; /* ซ่อนปุ่ม hamburger บนหน้าจอขนาดใหญ่ */
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+@media (max-width: 768px)  {
+   
+  .logobox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+  }
+
   .main-content {
     flex-direction: column;
+    
   }
 
   .sidebar {
     width: 100%;
-    height: auto; /* ปรับความสูงให้เหมาะสม */
+    height: auto;
   }
 
-  
+  .logo-text{
+    font-size: 0.8rem;
+  }
+
+  .navbarbox {
+    flex-wrap: wrap;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+    width: 100%;
+  }
+  .hamburger {
+    display: block;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    
+  }
+    .navbar {
+    display: none;
+    flex-direction: column;
+    width: 100vw;           /* ให้กว้างเต็ม viewport */
+    max-width: 100vw;       /* ป้องกันล้น */
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    position: static;
+    left: 0;
+    box-sizing: border-box;
+  }
+
+  .navbar.active {
+    display: flex;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    z-index: 10;
+  }
+
+  .navbar li,
+  .navbar a {
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+  }
+
+  .logobox{
+    padding: 6px;
+  }
+
+
+
 }
