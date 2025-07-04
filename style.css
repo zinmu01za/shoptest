@@ -8,7 +8,7 @@
 .navbarbox{
     background-color: #f8f9fa;
     height: 50px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
     width: 100%;
     display: flex;
     align-items: center;
@@ -43,3 +43,38 @@
 }
 
 
+.main-content{
+   display: flex;
+   align-items: flex-start;
+}
+
+
+.sidebar{
+    width: 300px;
+    background-color: #b3cee9;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* ป้องกันไม่ให้ sidebar หดตัว */
+    height: 100vh; /* ให้ sidebar ยืดเต็มความสูงของ viewport */
+    
+}
+
+
+.content{
+    padding: 1rem;
+    
+}
+
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto; /* ปรับความสูงให้เหมาะสม */
+  }
+
+  
+}
