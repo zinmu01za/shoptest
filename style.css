@@ -45,27 +45,20 @@
 }
 
 
-.main-content{
-   display: flex;
-
-}
-
-
-.sidebar{
-    width: 300px;
-    background-color: #b3cee9;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    flex-shrink: 0; /* ป้องกันไม่ให้ sidebar หดตัว */
-    height: 100vh; /* ให้ sidebar ยืดเต็มความสูงของ viewport */
-    
-}
-
-
 .content{
-    padding: 1rem;
-    
+  background-image: url('img/bgfoodtop.jpg'); /* ใช้ภาพพื้นหลัง */
+   /* ปรับขนาดภาพให้เต็มพื้นที่ */
+  background-size: cover; /* ปรับขนาดภาพให้เต็มพื้นที่ */
+  background-repeat: no-repeat; /* ป้องกันการทำซ้ำของภาพพื้นหลัง */
+  background-position: center; /* จัดตำแหน่งภาพพื้นหลัง */
+  width: 100%; /* ให้กว้างเต็ม viewport */
+  height: 100vh; /* ให้เนื้อหายืดเต็มความสูงของ viewport */
+  max-height: 93vh;
+  max-width: 100%; /* ป้องกันล้น */
+ 
 }
+
+
 
 .logo{
     width: 50px; /* ปรับขนาดโลโก้ */
@@ -100,6 +93,24 @@
     margin-right: 1rem;
 }
 
+.overlay {
+  padding: 60px;
+  color: white; /* ปรับสีข้อความ */
+}
+
+.welcome {
+  font-size: 4.5rem; /* ปรับขนาดข้อความ */
+  font-weight: bold; /* ทำให้ข้อความหนา */
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  
+  text-align: left; 
+  margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่าง */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
 @media (max-width: 768px)  {
    
   .logobox {
@@ -110,14 +121,11 @@
   }
 
   .main-content {
-    flex-direction: column;
     
+    background-size: cover;
   }
 
-  .sidebar {
-    width: 100%;
-    height: auto;
-  }
+  
 
   .logo-text{
     font-size: 0.8rem;
@@ -154,6 +162,7 @@
     display: flex;
     box-shadow: 0 4px 8px rgba(0,0,0,0.12);
     z-index: 10;
+    
   }
 
   .navbar li,
@@ -168,6 +177,9 @@
     padding: 6px;
   }
 
+  .content {
+        background-position: 60% 20%; /* ปรับให้โฟกัสส่วนบนของภาพ */
+    }
 
 
 }
